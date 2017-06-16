@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 ## Name of Slack Blot
-BOT_NAME = "erp"
+BOT_NAME = "cms"
 
 ## Initialize the Slack Client with Token
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -96,7 +96,7 @@ def format_tasks_for_slack(list_of_tasks):
     response = [
         {
             "fallback": "broken",
-            "author_name": "Rob Michaelis",
+            "author_name": "Thomas Edison",
             "text": "<cmsurl=925617|925617>",
             "fields": [
                 {
@@ -168,7 +168,7 @@ BOT_ID = get_bot_id(BOT_NAME)
 
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
-EXAMPLE_COMMAND = "@erp"
+EXAMPLE_COMMAND = "@cms"
 
 
 def handle_command(command, channel):
