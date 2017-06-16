@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+   slack:
+     depends_on:
+        - mongod
+     image: mugithi/slackselenium_slack:latest
+     volumes:
+        - ./slack:/slack
+
+   selenium:
+     depends_on:
+       - mongod
+     image: mugithi/slackselenium_selenium:latest
+     volumes:
+       - ./selenium:/selenium
+     ports:
+       - 5000:5000
+
+
+   mongod:
+     image: mugithi/slackselenium_mongod:latest
+     volumes:
+       - ./mongod/data/db:/data/configdb
+     ports:
+       - 27017:27017
